@@ -27,7 +27,7 @@ export default function Post() {
   let skip = 0;
   const loadmore = () => {
     try {
-      axios.post("https://plantinapp.me/", { skip }).then((response) => {
+      axios.post("https://plantin-api-didheemose.vercel.app/", { skip }).then((response) => {
         shuffle(response.data);
       });
       skip += 10;

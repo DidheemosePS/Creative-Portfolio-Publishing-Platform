@@ -89,7 +89,7 @@ export default function ProfileEdit({
             )
             .then((response) => {
               axios
-                .post("https://plantinapp.me/editpost", {
+                .post("https://plantin-api-didheemose.vercel.app/editpost", {
                   postid: editProfileData._id,
                   userid: userid.id,
                   title: data.title,
@@ -113,7 +113,7 @@ export default function ProfileEdit({
           await imageupload(data.uploadimage[0]);
           const imageurl = sessionStorage.getItem("imageurl");
           axios
-            .post("https://plantinapp.me/editpost", {
+            .post("https://plantin-api-didheemose.vercel.app/editpost", {
               postid: editProfileData._id,
               userid: userid.id,
               title: data.title,
@@ -135,7 +135,7 @@ export default function ProfileEdit({
       ) {
         try {
           axios
-            .post("https://plantinapp.me/editpost", {
+            .post("https://plantin-api-didheemose.vercel.app/editpost", {
               postid: editProfileData._id,
               userid: userid.id,
               title: data.title,
@@ -170,7 +170,7 @@ export default function ProfileEdit({
             )
             .then((response) => {
               axios
-                .post("https://plantinapp.me/editpost", {
+                .post("https://plantin-api-didheemose.vercel.app/editpost", {
                   postid: editProfileData._id,
                   userid: userid.id,
                   title: data.title,
@@ -198,7 +198,7 @@ export default function ProfileEdit({
   useEffect(() => {
     try {
       axios
-        .get("https://plantinapp.me/category/fetch")
+        .get("https://plantin-api-didheemose.vercel.app/category/fetch")
         .then((response) => {
           setCategorys(response.data);
         });
@@ -294,7 +294,7 @@ export default function ProfileEdit({
           })}
           onSubmit={async (addCategory, { resetForm }) => {
             const response = await axios.post(
-              "https://plantinapp.me/category/add",
+              "https://plantin-api-didheemose.vercel.app/category/add",
               {
                 addcategory: addCategory.addcategory,
               }

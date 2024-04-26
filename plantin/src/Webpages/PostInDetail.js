@@ -12,7 +12,7 @@ export default function PostInDetail() {
 
   useEffect(() => {
     try {
-      axios.get(`https://plantinapp.me/post/${id}`).then((response) => {
+      axios.get(`https://plantin-api-didheemose.vercel.app/post/${id}`).then((response) => {
         response.data.success ? setValue(response.data.post) : navigate("*");
       });
     } catch (err) {

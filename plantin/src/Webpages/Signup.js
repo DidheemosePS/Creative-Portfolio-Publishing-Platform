@@ -46,7 +46,7 @@ export default function Signup({ bcklogin }) {
       signupbtn.current.setAttribute("disabled", "disabled");
       signupbtn.current.style.opacity = "50%";
       await axios
-        .post("https://plantinapp.me/signup", data)
+        .post("https://plantin-api-didheemose.vercel.app/signup", data)
         .then((response) => {
           response.data === "Success" ? bcklogin(true) : setUser(true);
         });

@@ -93,7 +93,7 @@ export default function Uploadpopup() {
             )
             .then((response) => {
               axios
-                .post("https://plantinapp.me/upload", {
+                .post("https://plantin-api-didheemose.vercel.app/upload", {
                   userid: userid.id,
                   uploader,
                   role: userid.role,
@@ -116,7 +116,7 @@ export default function Uploadpopup() {
       } else {
         try {
           axios
-            .post("https://plantinapp.me/upload", {
+            .post("https://plantin-api-didheemose.vercel.app/upload", {
               userid: userid.id,
               uploader,
               role: userid.role,
@@ -201,7 +201,7 @@ export default function Uploadpopup() {
 
   useEffect(() => {
     try {
-      axios.get("https://plantinapp.me/category/fetch").then((response) => {
+      axios.get("https://plantin-api-didheemose.vercel.app/category/fetch").then((response) => {
         setCategorys(response.data);
       });
     } catch (err) {
@@ -288,7 +288,7 @@ export default function Uploadpopup() {
             })}
             onSubmit={async (addCategory, { resetForm }) => {
               const response = await axios.post(
-                "https://plantinapp.me/category/add",
+                "https://plantin-api-didheemose.vercel.app/category/add",
                 {
                   addcategory: addCategory.addcategory,
                 }

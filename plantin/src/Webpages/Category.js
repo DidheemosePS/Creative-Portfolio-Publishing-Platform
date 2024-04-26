@@ -14,7 +14,7 @@ export default function Category() {
   const deletecategory = async (categoryid, categoryname) => {
     try {
       const response = await axios.post(
-        "https://plantinapp.me/category/delete",
+        "https://plantin-api-didheemose.vercel.app/category/delete",
         {
           categoryid,
           categoryname
@@ -29,7 +29,7 @@ export default function Category() {
 
   useEffect(() => {
     try {
-      axios.get("https://plantinapp.me/category/fetch").then((response) => {
+      axios.get("https://plantin-api-didheemose.vercel.app/category/fetch").then((response) => {
         setCategorys(response.data);
       });
     } catch (err) {

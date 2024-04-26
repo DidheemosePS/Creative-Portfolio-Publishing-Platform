@@ -4,7 +4,7 @@ import axios from "axios";
 export default function LoggedUsers() {
   const [loggedUsers, setLoggedUser] = useState([]);
   useEffect(() => {
-    axios.get("https://plantinapp.me/logged/users").then((response) => {
+    axios.get("https://plantin-api-didheemose.vercel.app/logged/users").then((response) => {
       setLoggedUser(response.data);
     });
   }, []);

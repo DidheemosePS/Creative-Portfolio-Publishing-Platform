@@ -34,7 +34,7 @@ export default function App() {
       const sessionStorageToken = sessionStorage.getItem("ghasjdsbdnewiqyew");
       if (sessionStorageToken) {
         axios
-          .post("https://plantinapp.me/validate", {
+          .post("https://plantin-api-didheemose.vercel.app/validate", {
             sessionStorageToken,
           })
           .then((response) => {

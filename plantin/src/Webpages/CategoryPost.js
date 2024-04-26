@@ -31,7 +31,7 @@ export default function Post() {
   const loadmore = () => {
     try {
       axios
-        .post("https://plantinapp.me/category", {
+        .post("https://plantin-api-didheemose.vercel.app/category", {
           skip,
           id,
         })

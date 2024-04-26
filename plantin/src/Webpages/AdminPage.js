@@ -15,7 +15,7 @@ export default function AdminPage() {
   const deletefunction = async (id) => {
     try {
       const response = await axios.post(
-        "https://plantinapp.me/admin/removepost",
+        "https://plantin-api-didheemose.vercel.app/admin/removepost",
         {
           id,
         }
@@ -29,7 +29,7 @@ export default function AdminPage() {
   useEffect(() => {
     try {
       axios
-        .get("https://plantinapp.me/admin/fetchpost")
+        .get("https://plantin-api-didheemose.vercel.app/admin/fetchpost")
         .then((response) => {
           setAdminResults(response.data);
         });

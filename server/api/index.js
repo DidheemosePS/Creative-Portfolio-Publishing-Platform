@@ -563,3 +563,5 @@ app.post("/category/delete", async (req, res) => {
 });
 
 app.listen(3004, () => console.log("Server Created Successfully"));
+
+module.exports = app

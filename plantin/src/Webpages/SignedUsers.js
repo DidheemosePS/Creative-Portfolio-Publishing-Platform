@@ -8,7 +8,7 @@ export default function SignedUsers() {
   const deleteusers = async (id) => {
     try {
       const deleteuser = await axios.post(
-        "https://plantinapp.me/signed/user/delete",
+        "https://plantin-api-didheemose.vercel.app/signed/user/delete",
         {
           id,
         }
@@ -21,7 +21,7 @@ export default function SignedUsers() {
 
   useEffect(() => {
     try {
-      axios.get("https://plantinapp.me/signed/users").then((response) => {
+      axios.get("https://plantin-api-didheemose.vercel.app/signed/users").then((response) => {
         setSignedUsers(response.data);
       });
     } catch (err) {
