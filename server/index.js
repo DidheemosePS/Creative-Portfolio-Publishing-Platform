@@ -4,14 +4,6 @@ const { MongoClient, ObjectId } = require("mongodb");
 const cors = require("cors");
 const { sign, verify } = require("jsonwebtoken");
 const cloudinary = require("cloudinary").v2;
-const fs = require("fs");
-const https = require("https");
-
-const cred = {
-  cert: fs.readFileSync("./ssl/plantinapp_me.crt"),
-  ca: fs.readFileSync("./ssl/plantinapp_me.ca-bundle"),
-  key: fs.readFileSync("./ssl/plantinapp_me.key"),
-};
 
 dotenv.config({ path: "./.env" });
 cloudinary.config({
@@ -22,13 +14,6 @@ cloudinary.config({
 });
 
 const app = express();
-app.use((req, res, next) => {
-  if (req.protocol === "http") {
-    res.redirect(301, `https://${req.headers.host}${req.url}`);
-  } else {
-    next();
-  }
-});
 app.use(cors());
 app.use(express.json());
 
@@ -578,5 +563,3 @@ app.post("/category/delete", async (req, res) => {
 });
 
 app.listen(3004, () => console.log("Server Created Successfully"));
-const httpsServer = https.createServer(cred, app);
-httpsServer.listen(8443);
