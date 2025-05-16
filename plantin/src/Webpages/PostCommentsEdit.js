@@ -20,7 +20,7 @@ export function PostCommentsEdit({
       onSubmit={async (comment, { resetForm }) => {
         try {
           const response = await axios.post(
-            "https://plantin-api-didheemose.vercel.app/post/comments/edit",
+            `${process.env.REACT_APP_API_URL}/post/comments/edit`,
             {
               commentid: commentid,
               postid,
@@ -74,7 +74,7 @@ export function PostCommentsReplayEdit({
       onSubmit={async (replay, { resetForm }) => {
         try {
           const response = await axios.post(
-            "https://plantin-api-didheemose.vercel.app/post/comments/replays/edit",
+            `${process.env.REACT_APP_API_URL}/post/comments/replays/edit`,
             {
               replayid,
               commentid,

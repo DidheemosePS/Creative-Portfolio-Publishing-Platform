@@ -36,7 +36,7 @@ export default function AdminLogin() {
       adminloginbtn.current.setAttribute("disabled", "disabled");
       adminloginbtn.current.style.opacity = "50%";
       await axios
-        .post("https://plantin-api-didheemose.vercel.app/AdminLogin", data)
+        .post(`${process.env.REACT_APP_API_URL}/AdminLogin`, data)
         .then((response) => {
           if (response.data.error) {
             setInvalid(true);

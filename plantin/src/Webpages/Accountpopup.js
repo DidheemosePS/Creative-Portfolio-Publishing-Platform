@@ -16,7 +16,7 @@ export default function Accountpopup() {
   const username = sessionStorage.getItem("username");
   const loginstatus = async () => {
     const decode = jwt_decode(sessionStorage.getItem("ghasjdsbdnewiqyew"));
-    await axios.post("https://plantin-api-didheemose.vercel.app/logout", {
+    await axios.post(`${process.env.REACT_APP_API_URL}/logout`, {
       id: decode.id,
     });
   };

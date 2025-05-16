@@ -23,7 +23,7 @@ export default function Profile() {
   const deletefunction = async (id) => {
     try {
       await axios
-        .post("https://plantin-api-didheemose.vercel.app/removepost", {
+        .post(`${process.env.REACT_APP_API_URL}/removepost`, {
           id,
           userid: decoded.id,
         })
@@ -43,7 +43,7 @@ export default function Profile() {
   useEffect(() => {
     try {
       axios
-        .get(`https://plantin-api-didheemose.vercel.app/profile/${decoded.id}`)
+        .get(`${process.env.REACT_APP_API_URL}/profile/${decoded.id}`)
         .then((response) => {
           response.data.error
             ? setnotFound(true)
