@@ -15,6 +15,10 @@ cloudinary.config({
 
 const app = express();
 app.use(cors());
+app.use((req, res, next)=>{
+  res.setHeader("Access-Control-Allow-Origin", "https://plantin.didheemose.dev");
+  next();
+})
 app.use(express.json());
 
 const uri = process.env.MONGODB_URL;
