@@ -14,19 +14,7 @@ cloudinary.config({
 });
 
 const app = express();
-app.use(cors({
-  origin: 'https://plantin.didheemose.dev',
-  credentials: true,
-  methods: ["GET", "POST", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"]
-}));
-app.options('*', (req, res) => {
-  res.header("Access-Control-Allow-Origin", allowedOrigin);
-  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  res.header("Access-Control-Allow-Credentials", "true");
-  res.status(204).end();
-});
+app.use(cors());
 app.use(express.json());
 
 const uri = process.env.MONGODB_URL;
